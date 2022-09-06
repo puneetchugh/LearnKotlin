@@ -14,6 +14,12 @@ import com.example.learningkotlin.section.Chapter5.labels
 import com.example.learningkotlin.section.Chapter5.repeatForLoops
 import com.example.learningkotlin.section.Chapter5.sealedClassesWithWhen
 import com.example.learningkotlin.section.Chapter5.whenInKotlin
+import com.example.learningkotlin.section.Chapter7.checkDivideIfWholeSolution
+import com.example.learningkotlin.section.Chapter7.elvisOperator
+import com.example.learningkotlin.section.Chapter7.kotlinNullable
+import com.example.learningkotlin.section.Chapter7.kotlinSmartCasts
+import com.example.learningkotlin.section.Chapter7.notNullAssertions
+import com.example.learningkotlin.section.Chapter7.safeCalls
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         chapter2()
         chapter3()
         chapter5()
+        chapter7()
     }
 
     private fun chapter2() {
@@ -54,5 +61,14 @@ class MainActivity : AppCompatActivity() {
         whenInKotlin()
         sealedClassesWithWhen()
         repeatForLoops(6)
+    }
+
+    private fun chapter7(){
+        kotlinNullable()
+        kotlinSmartCasts()
+        notNullAssertions()
+        elvisOperator()
+        checkDivideIfWholeSolution()
+        safeCalls()
     }
 }
