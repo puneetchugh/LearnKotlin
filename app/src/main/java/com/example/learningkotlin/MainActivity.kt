@@ -7,6 +7,13 @@ import com.example.learningkotlin.section.Chapter3.kotlinStrings
 import com.example.learningkotlin.section.Chapter3.kotlinStringsOperations
 import com.example.learningkotlin.section.Chapter3.pairsAndTriplets
 import com.example.learningkotlin.section.Chapter3.typeConversion
+import com.example.learningkotlin.section.Chapter5.decreasingRanges
+import com.example.learningkotlin.section.Chapter5.forLoops
+import com.example.learningkotlin.section.Chapter5.increasingRanges
+import com.example.learningkotlin.section.Chapter5.labels
+import com.example.learningkotlin.section.Chapter5.repeatForLoops
+import com.example.learningkotlin.section.Chapter5.sealedClassesWithWhen
+import com.example.learningkotlin.section.Chapter5.whenInKotlin
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         chapter2()
         chapter3()
+        chapter5()
     }
 
     private fun chapter2() {
@@ -36,5 +44,15 @@ class MainActivity : AppCompatActivity() {
         kotlinStrings()
         kotlinStringsOperations()
         pairsAndTriplets()
+    }
+
+    private fun chapter5(){
+        increasingRanges()
+        decreasingRanges()
+        forLoops()
+        labels()
+        whenInKotlin()
+        sealedClassesWithWhen()
+        repeatForLoops(6)
     }
 }
