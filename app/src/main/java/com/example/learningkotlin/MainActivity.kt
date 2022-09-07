@@ -14,6 +14,7 @@ import com.example.learningkotlin.section.Chapter5.labels
 import com.example.learningkotlin.section.Chapter5.repeatForLoops
 import com.example.learningkotlin.section.Chapter5.sealedClassesWithWhen
 import com.example.learningkotlin.section.Chapter5.whenInKotlin
+import com.example.learningkotlin.section.Chapter6.createBST
 import com.example.learningkotlin.section.Chapter7.checkDivideIfWholeSolution
 import com.example.learningkotlin.section.Chapter7.elvisOperator
 import com.example.learningkotlin.section.Chapter7.kotlinNullable
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         chapter3()
         chapter5()
         chapter7()
+        chapter6()
     }
 
     private fun chapter2() {
@@ -70,5 +72,9 @@ class MainActivity : AppCompatActivity() {
         elvisOperator()
         checkDivideIfWholeSolution()
         safeCalls()
+    }
+
+    private fun chapter6(){
+        createBST()
     }
 }
