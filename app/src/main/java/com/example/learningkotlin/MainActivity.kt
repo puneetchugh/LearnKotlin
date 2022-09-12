@@ -7,6 +7,10 @@ import com.example.learningkotlin.section.Chapter3.kotlinStrings
 import com.example.learningkotlin.section.Chapter3.kotlinStringsOperations
 import com.example.learningkotlin.section.Chapter3.pairsAndTriplets
 import com.example.learningkotlin.section.Chapter3.typeConversion
+import com.example.learningkotlin.section.Chapter4.createTrie
+import com.example.learningkotlin.section.Chapter4.ifElseExpression
+import com.example.learningkotlin.section.Chapter4.loops
+import com.example.learningkotlin.section.Chapter4.shortCircuit
 import com.example.learningkotlin.section.Chapter5.decreasingRanges
 import com.example.learningkotlin.section.Chapter5.forLoops
 import com.example.learningkotlin.section.Chapter5.increasingRanges
@@ -28,9 +32,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         chapter2()
         chapter3()
+        chapter4()
         chapter5()
-        chapter7()
         chapter6()
+        chapter7()
     }
 
     private fun chapter2() {
@@ -55,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         pairsAndTriplets()
     }
 
-    private fun chapter5(){
+    private fun chapter5() {
         increasingRanges()
         decreasingRanges()
         forLoops()
@@ -65,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         repeatForLoops(6)
     }
 
-    private fun chapter7(){
+    private fun chapter7() {
         kotlinNullable()
         kotlinSmartCasts()
         notNullAssertions()
@@ -74,7 +79,14 @@ class MainActivity : AppCompatActivity() {
         safeCalls()
     }
 
-    private fun chapter6(){
+    private fun chapter6() {
         createBST()
+    }
+
+    private fun chapter4() {
+        createTrie()
+        loops()
+        ifElseExpression()
+        shortCircuit()
     }
 }
