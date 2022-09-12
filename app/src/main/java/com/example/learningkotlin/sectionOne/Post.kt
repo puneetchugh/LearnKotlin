@@ -1,4 +1,4 @@
-package com.example.learningkotlin.section
+package com.example.learningkotlin.sectionOne
 
 sealed class Post {
     class Status(val text: String) : Post()
