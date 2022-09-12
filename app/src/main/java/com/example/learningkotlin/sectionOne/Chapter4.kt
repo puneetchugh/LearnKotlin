@@ -1,4 +1,4 @@
-package com.example.learningkotlin.section
+package com.example.learningkotlin.sectionOne
 
 import kotlin.random.Random
 
