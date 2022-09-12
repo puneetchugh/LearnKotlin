@@ -25,6 +25,12 @@ import com.example.learningkotlin.sectionOne.Chapter7.kotlinNullable
 import com.example.learningkotlin.sectionOne.Chapter7.kotlinSmartCasts
 import com.example.learningkotlin.sectionOne.Chapter7.notNullAssertions
 import com.example.learningkotlin.sectionOne.Chapter7.safeCalls
+import com.example.learningkotlin.sectionTwo.Chapter8.arrays
+import com.example.learningkotlin.sectionTwo.Chapter8.iterating
+import com.example.learningkotlin.sectionTwo.Chapter8.listMethods
+import com.example.learningkotlin.sectionTwo.Chapter8.lists
+import com.example.learningkotlin.sectionTwo.Chapter8.mutableLists
+import com.example.learningkotlin.sectionTwo.Chapter8.primitiveArrays
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         chapter5()
         chapter6()
         chapter7()
+        chapter8()
     }
 
     private fun chapter2() {
@@ -88,5 +95,14 @@ class MainActivity : AppCompatActivity() {
         loops()
         ifElseExpression()
         shortCircuit()
+    }
+
+    private fun chapter8() {
+        arrays()
+        primitiveArrays()
+        lists()
+        mutableLists()
+        iterating()
+        listMethods()
     }
 }
