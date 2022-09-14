@@ -25,6 +25,11 @@ import com.example.learningkotlin.sectionOne.Chapter7.kotlinNullable
 import com.example.learningkotlin.sectionOne.Chapter7.kotlinSmartCasts
 import com.example.learningkotlin.sectionOne.Chapter7.notNullAssertions
 import com.example.learningkotlin.sectionOne.Chapter7.safeCalls
+import com.example.learningkotlin.sectionTwo.Chapter10.lambdaAndEnclosingScope
+import com.example.learningkotlin.sectionTwo.Chapter10.lambdaOperations
+import com.example.learningkotlin.sectionTwo.Chapter10.lambdas
+import com.example.learningkotlin.sectionTwo.Chapter10.question
+import com.example.learningkotlin.sectionTwo.Chapter10.sorting
 import com.example.learningkotlin.sectionTwo.Chapter8.arrays
 import com.example.learningkotlin.sectionTwo.Chapter8.iterating
 import com.example.learningkotlin.sectionTwo.Chapter8.listMethods
@@ -43,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         chapter6()
         chapter7()
         chapter8()
+        chapter10()
     }
 
     private fun chapter2() {
@@ -104,5 +110,13 @@ class MainActivity : AppCompatActivity() {
         mutableLists()
         iterating()
         listMethods()
+    }
+
+    private fun chapter10() {
+        lambdas()
+        lambdaAndEnclosingScope()
+        sorting()
+        lambdaOperations()
+        question()
     }
 }
