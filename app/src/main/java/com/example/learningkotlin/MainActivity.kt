@@ -2,6 +2,7 @@ package com.example.learningkotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.learningkotlin.Misc.usingEnums
 import com.example.learningkotlin.sectionOne.Chapter2
 import com.example.learningkotlin.sectionOne.Chapter3.kotlinStrings
 import com.example.learningkotlin.sectionOne.Chapter3.kotlinStringsOperations
@@ -36,6 +37,9 @@ import com.example.learningkotlin.sectionTwo.Chapter8.listMethods
 import com.example.learningkotlin.sectionTwo.Chapter8.lists
 import com.example.learningkotlin.sectionTwo.Chapter8.mutableLists
 import com.example.learningkotlin.sectionTwo.Chapter8.primitiveArrays
+import com.example.learningkotlin.sectionTwo.Chapter9
+import com.example.learningkotlin.sectionTwo.Chapter9.maps
+import com.example.learningkotlin.sectionTwo.Chapter9.sets
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +52,10 @@ class MainActivity : AppCompatActivity() {
         chapter6()
         chapter7()
         chapter8()
+        chapter9()
         chapter10()
+
+        misc()
     }
 
     private fun chapter2() {
@@ -112,11 +119,21 @@ class MainActivity : AppCompatActivity() {
         listMethods()
     }
 
+    private fun chapter9() {
+        maps()
+        sets()
+        Chapter9.lists()
+    }
+
     private fun chapter10() {
         lambdas()
         lambdaAndEnclosingScope()
         sorting()
         lambdaOperations()
         question()
+    }
+
+    private fun misc() {
+        usingEnums()
     }
 }
