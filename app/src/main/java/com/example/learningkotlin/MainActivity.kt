@@ -26,6 +26,11 @@ import com.example.learningkotlin.sectionOne.Chapter7.kotlinNullable
 import com.example.learningkotlin.sectionOne.Chapter7.kotlinSmartCasts
 import com.example.learningkotlin.sectionOne.Chapter7.notNullAssertions
 import com.example.learningkotlin.sectionOne.Chapter7.safeCalls
+import com.example.learningkotlin.sectionThree.chapter11.Chapter11
+import com.example.learningkotlin.sectionThree.chapter11.Chapter11.Companion.createClassInstance
+import com.example.learningkotlin.sectionThree.chapter11.Chapter11Data
+import com.example.learningkotlin.sectionThree.chapter11.challenge.MovieList
+import com.example.learningkotlin.sectionThree.chapter11.challenge.User
 import com.example.learningkotlin.sectionTwo.Chapter10.lambdaAndEnclosingScope
 import com.example.learningkotlin.sectionTwo.Chapter10.lambdaOperations
 import com.example.learningkotlin.sectionTwo.Chapter10.lambdas
@@ -42,6 +47,8 @@ import com.example.learningkotlin.sectionTwo.Chapter9.maps
 import com.example.learningkotlin.sectionTwo.Chapter9.sets
 
 class MainActivity : AppCompatActivity() {
+
+    val TAG = "${MainActivity::class.java}:"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -54,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         chapter8()
         chapter9()
         chapter10()
-
+        chapter11()
         misc()
     }
 
@@ -135,5 +142,54 @@ class MainActivity : AppCompatActivity() {
 
     private fun misc() {
         usingEnums()
+    }
+
+    private fun chapter11() {
+        var newChapter = createClassInstance("Chapter50", "Section10")
+        newChapter = createClassInstance("Chapter25", "Section5")
+        newChapter.chapterName = "Chapter30"
+        println("$TAG:${Chapter11.TAG} New Chapter is updated : ${newChapter.description}")
+
+        val newChapterStart = createClassInstance("Chapter0", "Section0")
+        val newChapterEnd = createClassInstance("Chapter0", "Section0")
+
+        //This values equality will still give false as the class doesn't have equals and hashCode overriden,
+        //The Class is not a data class
+        println("$TAG:${Chapter11.TAG} Checking the equality == operator for values of $newChapterStart and $newChapterEnd ${newChapterStart == newChapterEnd}")
+        println("$TAG:${Chapter11.TAG} Checking the reference equality === operator for $newChapterStart and $newChapterEnd ${newChapterStart === newChapterEnd}")
+
+        val listOfChapters = listOf(
+            createClassInstance("Chapter0", "Section0"),
+            createClassInstance("Chapter1", "Section1"),
+            createClassInstance("Chapter50", "Section10"),
+            newChapterStart
+        )
+
+        //List<>.contains() works on the value equality == operator, but if hashCode() and equals() aren't overriden, then equality (==) then default reference equality will be used
+        //if the Class is converted to 'data class', then hashCode() and equals() will be overriden too and hence it will be truly values comparison
+        println("$TAG${Chapter11.TAG} Checking if list of Chapters contain newChapterEnd ${listOfChapters.contains(newChapterEnd)}")
+        println("$TAG${Chapter11.TAG} Checking if list of Chapters contain newChapterStart ${listOfChapters.contains(newChapterStart)}")
+
+        //destructuring syntax - data class, the params mentioned in constructor
+        val newChapterData = Chapter11Data("Chapter11", "Section3")
+        val (chapterName, section) = newChapterData
+        println("$TAG${Chapter11::class.java} Destructuring newChapterData ($chapterName, $section) ")
+
+
+        //challenge in Chapter 11
+        val userPuneet = User("Puneet")
+        val movieList = MovieList.createMovieListInstance(listOf("The Pursuit Of Happiness", "Chandlier's list"))
+        userPuneet.addList(movieList)
+        println("$TAG${User.TAG} User Puneet's list : ${userPuneet.list()}")
+
+        val userJohn = User("John")
+        val movieListJohn = MovieList.createMovieListInstance(listOf("Jurassic Park", "Titanic"))
+        userJohn.addList(movieListJohn)
+        println("$TAG${User.TAG} User John's list : ${userJohn.list()}")
+
+        val userGodu = User("Godu")
+        //val movieListGodu = MovieList.createMovieListInstance(listOf("Narnia", "Alabama"))
+        //userGodu.addList(movieListGodu)
+        println("$TAG${User.TAG} User Godu's list : ${userGodu.list()}")
     }
 }
