@@ -31,6 +31,10 @@ import com.example.learningkotlin.sectionThree.chapter11.Chapter11.Companion.cre
 import com.example.learningkotlin.sectionThree.chapter11.Chapter11Data
 import com.example.learningkotlin.sectionThree.chapter11.challenge.MovieList
 import com.example.learningkotlin.sectionThree.chapter11.challenge.User
+import com.example.learningkotlin.sectionThree.chapter13.Chapter13
+import com.example.learningkotlin.sectionThree.chapter13.Chapter13CustomGetter
+import com.example.learningkotlin.sectionThree.chapter13.Chapter13DelegatedProperties
+import com.example.learningkotlin.sectionThree.chapter13.extensionProp
 import com.example.learningkotlin.sectionTwo.Chapter10.lambdaAndEnclosingScope
 import com.example.learningkotlin.sectionTwo.Chapter10.lambdaOperations
 import com.example.learningkotlin.sectionTwo.Chapter10.lambdas
@@ -62,6 +66,7 @@ class MainActivity : AppCompatActivity() {
         chapter9()
         chapter10()
         chapter11()
+        chapter12()
         misc()
     }
 
@@ -142,6 +147,27 @@ class MainActivity : AppCompatActivity() {
 
     private fun misc() {
         usingEnums()
+    }
+
+    private fun chapter12() {
+        val chapter12CustomGetter = Chapter13CustomGetter(50.50, 40.50)
+        println("$TAG${Chapter13CustomGetter.TAG} diagonal value computed is ${chapter12CustomGetter.diagonal}")
+        println("$TAG${Chapter13CustomGetter.TAG} diagonal value computed without height and width change is ${chapter12CustomGetter.diagonal}")
+
+        chapter12CustomGetter.height = 100.50
+        chapter12CustomGetter.width = 50.50
+        println("$TAG${Chapter13CustomGetter.TAG} diagonal value computed after height and width are updated is ${chapter12CustomGetter.diagonal}")
+
+        val chapter12DelegatedProperties = Chapter13DelegatedProperties(15)
+        println("$TAG${Chapter13DelegatedProperties} initial value of unlocked ${chapter12DelegatedProperties.unlocked}, highestLevel ${chapter12DelegatedProperties.highestLevel}, unlockedDelegateVetoable ${chapter12DelegatedProperties.unlockedDelegateVetoable}")
+        chapter12DelegatedProperties.unlocked = true
+        println("$TAG${Chapter13DelegatedProperties} after value of unlocked changed, unlocked ${chapter12DelegatedProperties.unlocked}, highestLevel ${chapter12DelegatedProperties.highestLevel}, unlockedDelegateVetoable ${chapter12DelegatedProperties.unlockedDelegateVetoable}")
+        chapter12DelegatedProperties.unlockedDelegateVetoable = 25
+        println("$TAG${Chapter13DelegatedProperties} after value of unlockedDelegateVetoable, unlocked ${chapter12DelegatedProperties.unlocked}, highestLevel ${chapter12DelegatedProperties.highestLevel}, unlockedDelegateVetoable ${chapter12DelegatedProperties.unlockedDelegateVetoable}")
+        chapter12DelegatedProperties.printing()
+
+        val chapter12 = Chapter13(10, 30)
+        println("$TAG${Chapter13.TAG} printing the extension property : ${chapter12.extensionProp}")
     }
 
     private fun chapter11() {
