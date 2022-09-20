@@ -31,6 +31,9 @@ import com.example.learningkotlin.sectionThree.chapter11.Chapter11.Companion.cre
 import com.example.learningkotlin.sectionThree.chapter11.Chapter11Data
 import com.example.learningkotlin.sectionThree.chapter11.challenge.MovieList
 import com.example.learningkotlin.sectionThree.chapter11.challenge.User
+import com.example.learningkotlin.sectionThree.chapter12.Counter
+import com.example.learningkotlin.sectionThree.chapter12.Student
+import com.example.learningkotlin.sectionThree.chapter12.StudentRepository
 import com.example.learningkotlin.sectionThree.chapter13.Chapter13
 import com.example.learningkotlin.sectionThree.chapter13.Chapter13CustomGetter
 import com.example.learningkotlin.sectionThree.chapter13.Chapter13DelegatedProperties
@@ -67,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         chapter10()
         chapter11()
         chapter12()
+        chapter13()
         misc()
     }
 
@@ -149,7 +153,7 @@ class MainActivity : AppCompatActivity() {
         usingEnums()
     }
 
-    private fun chapter12() {
+    private fun chapter13() {
         val chapter12CustomGetter = Chapter13CustomGetter(50.50, 40.50)
         println("$TAG${Chapter13CustomGetter.TAG} diagonal value computed is ${chapter12CustomGetter.diagonal}")
         println("$TAG${Chapter13CustomGetter.TAG} diagonal value computed without height and width change is ${chapter12CustomGetter.diagonal}")
@@ -217,5 +221,23 @@ class MainActivity : AppCompatActivity() {
         //val movieListGodu = MovieList.createMovieListInstance(listOf("Narnia", "Alabama"))
         //userGodu.addList(movieListGodu)
         println("$TAG${User.TAG} User Godu's list : ${userGodu.list()}")
+    }
+
+    private fun chapter12() {
+        val student1 = Student.newStudent("Puneet", "Chugh")
+        val student2 = Student.newStudent("Chris", "Carpentar")
+        val student3 = Student.newStudent("Frank", "Yeats")
+
+
+        val counter = object : Counter {
+            override fun studentCount(): Int {
+                println("$TAG${StudentRepository.TAG} Students count: ${StudentRepository.allStudents.size}")
+                return StudentRepository.allStudents.size
+            }
+        }
+        StudentRepository.addStudent(student1, counter)
+        StudentRepository.addStudent(student2, counter)
+        StudentRepository.addStudent(student3, counter)
+        StudentRepository.listAllStudent()
     }
 }
