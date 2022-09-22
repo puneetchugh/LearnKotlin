@@ -38,6 +38,7 @@ import com.example.learningkotlin.sectionThree.chapter13.Chapter13
 import com.example.learningkotlin.sectionThree.chapter13.Chapter13CustomGetter
 import com.example.learningkotlin.sectionThree.chapter13.Chapter13DelegatedProperties
 import com.example.learningkotlin.sectionThree.chapter13.extensionProp
+import com.example.learningkotlin.sectionThree.chapter15.Classes15Object.testingClasses
 import com.example.learningkotlin.sectionThree.chapter17.UserCaseEmployee.createUser
 import com.example.learningkotlin.sectionTwo.Chapter10.lambdaAndEnclosingScope
 import com.example.learningkotlin.sectionTwo.Chapter10.lambdaOperations
@@ -72,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         chapter11()
         chapter12()
         chapter13()
+        chapter15()
         chapter17()
         misc()
     }
@@ -241,6 +243,10 @@ class MainActivity : AppCompatActivity() {
         StudentRepository.addStudent(student2, counter)
         StudentRepository.addStudent(student3, counter)
         StudentRepository.listAllStudent()
+    }
+
+    private fun chapter15() {
+        testingClasses()
     }
 
     private fun chapter17() {
