@@ -26,6 +26,8 @@ import com.example.learningkotlin.sectionOne.Chapter7.kotlinNullable
 import com.example.learningkotlin.sectionOne.Chapter7.kotlinSmartCasts
 import com.example.learningkotlin.sectionOne.Chapter7.notNullAssertions
 import com.example.learningkotlin.sectionOne.Chapter7.safeCalls
+import com.example.learningkotlin.sectionThree.Chapter16.enums
+import com.example.learningkotlin.sectionThree.Chapter16.usingSealedClasses
 import com.example.learningkotlin.sectionThree.chapter11.Chapter11
 import com.example.learningkotlin.sectionThree.chapter11.Chapter11.Companion.createClassInstance
 import com.example.learningkotlin.sectionThree.chapter11.Chapter11Data
@@ -74,6 +76,7 @@ class MainActivity : AppCompatActivity() {
         chapter12()
         chapter13()
         chapter15()
+        chapter16()
         chapter17()
         misc()
     }
@@ -251,5 +254,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun chapter17() {
         createUser()
+    }
+
+    private fun chapter16() {
+        enums()
+        usingSealedClasses()
     }
 }
