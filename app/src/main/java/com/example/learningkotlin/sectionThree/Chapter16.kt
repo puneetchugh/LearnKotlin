@@ -92,29 +92,29 @@ object Chapter16 {
 
     sealed class AcceptedCurrency {
         abstract val valueInDollars: Float
-        class Dollar: AcceptedCurrency() {
+
+        class Dollar : AcceptedCurrency() {
             override val valueInDollars = 1.0f
         }
-        class Euro: AcceptedCurrency() {
+
+        class Euro : AcceptedCurrency() {
             override val valueInDollars = 1.25f
         }
-        class Crypto: AcceptedCurrency() {
+
+        class Crypto : AcceptedCurrency() {
             override val valueInDollars = 2534.92f
         }
     }
 
-    fun usingSealedClasses(){
+    fun usingSealedClasses() {
 
         val arrayOfAcceptedCurrencies = arrayOf(AcceptedCurrency.Dollar(), AcceptedCurrency.Euro(), AcceptedCurrency.Crypto())
         arrayOfAcceptedCurrencies.forEach { acceptedCurrency ->
-            when(acceptedCurrency){
+            when (acceptedCurrency) {
                 is AcceptedCurrency.Crypto -> println("$TAG, It's a Crypto, value In dollars : ${acceptedCurrency.valueInDollars}")
                 is AcceptedCurrency.Dollar -> println("$TAG, It's a Dollar, value In dollars : ${acceptedCurrency.valueInDollars}")
                 is AcceptedCurrency.Euro -> println("$TAG, It's a Euro, value In dollars : ${acceptedCurrency.valueInDollars}")
             }
         }
-
-
     }
-
 }
