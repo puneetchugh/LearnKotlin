@@ -3,6 +3,7 @@ package com.example.learningkotlin
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.learningkotlin.Misc.usingEnums
+import com.example.learningkotlin.sectionFour.Chapter20
 import com.example.learningkotlin.sectionOne.Chapter2
 import com.example.learningkotlin.sectionOne.Chapter3.kotlinStrings
 import com.example.learningkotlin.sectionOne.Chapter3.kotlinStringsOperations
@@ -78,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         chapter15()
         chapter16()
         chapter17()
+        chapter20()
         misc()
     }
 
@@ -259,5 +261,13 @@ class MainActivity : AppCompatActivity() {
     private fun chapter16() {
         enums()
         usingSealedClasses()
+    }
+
+    private fun chapter20() {
+        val chapter20 = Chapter20()
+        chapter20.catchingAnException()
+        chapter20.tryCatchAsAnExpression()
+        chapter20.callingFunThrowsExceptionMethod()
+        chapter20.callingUsingElvisOperatorMethod()
     }
 }
