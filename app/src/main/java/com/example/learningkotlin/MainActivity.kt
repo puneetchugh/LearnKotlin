@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.learningkotlin.Misc.usingEnums
 import com.example.learningkotlin.sectionFour.Chapter20
+import com.example.learningkotlin.sectionFour.chapter19.MainClassJava
 import com.example.learningkotlin.sectionOne.Chapter2
 import com.example.learningkotlin.sectionOne.Chapter3.kotlinStrings
 import com.example.learningkotlin.sectionOne.Chapter3.kotlinStringsOperations
@@ -79,6 +80,7 @@ class MainActivity : AppCompatActivity() {
         chapter15()
         chapter16()
         chapter17()
+        chapter19()
         chapter20()
         misc()
     }
@@ -269,5 +271,16 @@ class MainActivity : AppCompatActivity() {
         chapter20.tryCatchAsAnExpression()
         chapter20.callingFunThrowsExceptionMethod()
         chapter20.callingUsingElvisOperatorMethod()
+    }
+
+    private fun chapter19() {
+        val mainClassJava = MainClassJava()
+        mainClassJava.firstName = "Puneet"
+        println("$TAG ${mainClassJava.firstName}")
+        println("$TAG ${mainClassJava.lastName}")
+
+
+        mainClassJava.printClass19()
+        mainClassJava.usingExtensionMethod()
     }
 }
